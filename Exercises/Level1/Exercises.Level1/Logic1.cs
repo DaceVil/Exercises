@@ -19,9 +19,39 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
-    }
+        if (cigars >= 40 && (isWeekend || cigars<=60))
+        {
+            return true;
+        }
+        return false;
 
+        //GARÁKAIS VARIANTS :
+        //{
+        //    //1.ja cigāru skaits ir mazāks par 40 tad ballīte nav izdevusies
+        //    if (cigars < 40)
+        //    {
+        //        return false;
+        //    }
+
+        //    //2.ja ir brīvdiena tad vienmer ir izdevusies
+
+        //    if (isWeekend)
+        //    {
+
+        //        return true;
+        //    }
+
+
+        //    //3.ja nav brīvdiena, tad cigāru skaitam ir jābūt mazākam par 60
+
+        //    if (cigars <= 60)
+        //    {
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
+    }
     /// <summary>
     /// You and your date are trying to get a table at a restaurant. The parameter "you" is the
     /// stylishness of your clothes, in the range 0..10, and "date" is the stylishness of your date's
@@ -36,7 +66,20 @@ public class Logic1
     /// </summary>
     public int DateFashion(int you, int date)
     {
-        throw new NotImplementedException();
+        //1.ja kaut viens ir 2 vai mazāk, tad 0
+        if (you  <=2 ||  date <= 2)
+        {
+            return 0;   
+        }
+
+        //2.ja kaut viens ir 8 vai vairak tad 2
+
+        if (you >= 8 || date >= 8)
+        {
+            return 2;
+        }
+        //3.citādi 1
+        return 1;
     }
 
     /// <summary>
@@ -50,10 +93,47 @@ public class Logic1
     /// squirrelPlay(95, true) → true
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
-    {
-        throw new NotImplementedException();
-    }
 
+    //1. ja temperatūra ir starp 60 un 90 un nav vasara ,tad atgriežam true
+    {
+        if (temp <60)
+        {
+            return false;   
+        }
+        if (temp <= 90 && ! isSummer || temp <= 100 && ( isSummer))
+        { return true; }
+
+
+        //2. ja temperatūra ir starp 60 un 100 un ir vasara, tad atgriežam true
+
+        //{
+        //    if (temp >=60 && temp <=100 &&  isSummer)
+        //    {
+        //        return true;
+        //    }
+        //}
+        //3. citādi atgriežam vērtību false
+        {
+            return false;
+        }
+//=======================================================
+        //Vai arī nākošais variants: 
+        //int higherTemp = 90;
+
+        //if (isSummer)
+        //{
+        //    higherTemp += 10;
+        //}
+
+        //if (temp >= 60 && temp <= higherTemp)
+        //{
+        //    return true;
+        //}
+
+        //return false;
+
+//========================================================================
+    }
     /// <summary>
     /// You are driving a little too fast, and a police officer stops you. Write code to compute the
     /// result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or
