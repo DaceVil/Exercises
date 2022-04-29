@@ -65,10 +65,23 @@ public class Logic1
     /// caughtSpeeding(65, false) → 1
     /// caughtSpeeding(65, true) → 0
     /// </summary>
-    public int CaughtSpeeding(int speed, bool isBirthday)
+    ///   if ((speed <= 60 && isBirthday) || (isBirthday && speed <= 65))
+    public static int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+        if ((speed <= 65 && isBirthday) || (speed <= 60 && !isBirthday))
+        {
+            return 0;
+        }
+        if (speed > 60 && speed <= 80)
+        {
+            return 1;
+        }
+        if ((speed > 80 && !isBirthday) || (speed <= 85 && isBirthday))
+        {
+            return 2;
+        }
     }
+
 
     /// <summary>
     /// Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are
@@ -80,7 +93,12 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int Summa;
+            Summa = a + b;
+        if ((a + b) >= 9 ))
+        {
+            return Summa;
+        }         
     }
 
     /// <summary>
