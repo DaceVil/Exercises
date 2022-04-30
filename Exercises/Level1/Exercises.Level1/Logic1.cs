@@ -146,17 +146,17 @@ public class Logic1
     /// caughtSpeeding(65, true) → 0
     /// </summary>
     ///   if ((speed <= 60 && isBirthday) || (isBirthday && speed <= 65))
-    public static int CaughtSpeeding(int speed, bool isBirthday)
+    public int CaughtSpeeding(int speed, bool isBirthday)
     {
         if ((speed <= 65 && isBirthday) || (speed <= 60 && !isBirthday))
         {
             return 0;
         }
-        if (speed > 60 && speed <= 80)
+        if (speed > 60 && speed <= 80 || speed <=85 && isBirthday)
         {
             return 1;
         }
-        if ((speed > 80 && !isBirthday) || (speed <= 85 && isBirthday))
+
         {
             return 2;
         }
@@ -175,10 +175,15 @@ public class Logic1
     {
         int Summa;
             Summa = a + b;
-        if ((a + b) >= 9 ))
+        if ((a + b) <= 9 )
         {
             return Summa;
-        }         
+        }
+        if ((a + b) >= 20 )
+        {
+            return Summa;
+        }
+        return 20;
     }
 
     /// <summary>
@@ -194,7 +199,18 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+       if (day >= 1 && day <= 5 && ! vacation)
+        {
+            return "7:00";
+        }
+
+        if ((day >= 1 && day <= 5 && vacation) || ((day >=0 || day >=6) && !vacation))
+        {
+            return "10:00";
+                
+         }
+
+       return "off";
     }
 
     /// <summary>
@@ -208,7 +224,19 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+       
+        double sum = a + b;
+        double difference = a - b;
+        sum = Math.Abs (a + b);
+        difference = Math.Abs (a - b);
+
+
+        if ((a ==6 || b == 6) || (a+b == 6) || (a-b == 6) || (b-a == 6))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -222,7 +250,11 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+        if( n>=1 && n <=10  && ! outsideMode || (outsideMode == true && (n <=1 || n>=10)))
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -235,7 +267,13 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        int number = 11;
+        
+       if (n == number || n == number+1 || n == number + number|| n == number + number +1 ||  n == number *number || n== number *number +1 )
+        {
+            return true ;
+        }
+        return false;
     }
 
     /// <summary>
@@ -248,7 +286,11 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+       if (n >1 || n> 2)
+        {
+            return true;
+        }
+        return false ;
     }
 
     /// <summary>
@@ -302,7 +344,12 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+        if( a+b <=12 || a+b >=20)
+        {
+            return sum;
+        }
+        return 19;
     }
 
     /// <summary>
@@ -316,7 +363,11 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+        if (isMorning && !isMom || isAsleep  && isMom || isAsleep )
+        {
+            return false;
+        }
+        return true;
     }
 
     /// <summary>
