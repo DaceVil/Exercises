@@ -231,7 +231,7 @@ public class Logic1
         difference = Math.Abs (a - b);
 
 
-        if ((a ==6 || b == 6) || (a+b == 6) || (a-b == 6) || (b-a == 6))
+        if ((a ==6 || b == 6) || (a+b == 6) || Math.Abs (a-b) == 6 || Math.Abs (b-a) == 6)
         {
             return true;
         }
@@ -344,12 +344,12 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        int sum = a + b;
-        if( a+b <=12 || a+b >=20)
+        int sum = (a + b);
+        if( a >=13 && a<=19 || b >=13 && b <= 19)
         {
-            return sum;
+            return 19;
         }
-        return 19;
+        return sum;
     }
 
     /// <summary>
@@ -383,7 +383,15 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+       if ((tea >=5 && candy >=5) && (!((tea / candy) >= 2 || (candy / tea) >= 2)))
+        {
+            return 1;
+        }
+       if (((tea / candy) >=2 || ((candy / tea) >= 2)) && (tea >= 5 && candy >= 5))
+        {
+            return 2;
+        }
+       return 0;
     }
 
     /// <summary>
@@ -397,7 +405,22 @@ public class Logic1
     /// </summary>
     public string FizzString(string str)
     {
-        throw new NotImplementedException();
+        if (str.StartsWith("f") && str.EndsWith("b"))
+        {
+            return "FizzBuzz";
+        }
+
+        if (str.StartsWith ("f") )
+        {
+            return "Fizz";
+        }
+        if (str.EndsWith ("b"))
+        {
+            return "Buzz";
+        }
+       
+        return str;
+
     }
 
     /// <summary>
@@ -413,7 +436,20 @@ public class Logic1
     /// </summary>
     public string FizzString2(int n)
     {
-        throw new NotImplementedException();
+        if (n % 3 == 0 && n % 5 == 0)
+        {
+            return "FizzBuzz!";
+        }
+        if (n%3 ==0 )
+        {
+            return "Fizz!";
+        }
+        if (n % 5 == 0)
+        {
+            return "Buzz!";
+        }
+
+        return (n +"!");
     }
 
     /// <summary>
@@ -425,7 +461,12 @@ public class Logic1
     /// </summary>
     public bool TwoAsOne(int a, int b, int c)
     {
-        throw new NotImplementedException();
+
+        if (a + b == c || b + c == a || c + a == b)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -438,7 +479,12 @@ public class Logic1
     /// </summary>
     public bool InOrder(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if ( bOk == true && c > b || (b > a && c > b) )
+        {
+            return true;
+        }
+    
+       return false ;
     }
 
     /// <summary>
@@ -452,7 +498,11 @@ public class Logic1
     /// </summary>
     public bool InOrderEqual(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if ((a<b && b<c) || (bOk== true && (a<=b && b<=c)  ))
+        {
+            return true ;
+        }
+        return false;
     }
 
     /// <summary>
@@ -466,7 +516,14 @@ public class Logic1
     /// </summary>
     public bool LastDigit(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int a1 = a % 10;
+        int b2 = b % 10;
+        int c3 = c % 10;
+        if( a1 == b2 || b2 == c3 || a1==c3 )
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -479,7 +536,11 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if(Math.Abs (a - b) >=10 || Math.Abs (b -c) >=10 || Math.Abs (a -c) >=10)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -493,7 +554,18 @@ public class Logic1
     /// </summary>
     public int WithoutDoubles(int die1, int die2, bool noDoubles)
     {
-        throw new NotImplementedException();
+
+        if ( (die1 == die2  && noDoubles == true))
+        {
+            return die1 + 1 + die2 ;
+
+        }
+        if ( die1 != die2 && noDoubles == true || noDoubles == false)
+        {
+            return die1 + die2;
+        }
+
+        return die1++  ;
     }
 
     /// <summary>
