@@ -286,7 +286,8 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-       if (n >1 || n> 2)
+        
+       if ((n % 20) ==1 ||( n % 20) == 2)
         {
             return true;
         }
@@ -303,7 +304,11 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        if( (n % 3 ==0 ) && !(n % 5 == 0) || !(n % 3 == 0) && (n % 5 == 0))
+        {
+            return true;
+        }    
+        return false;
     }
 
     /// <summary>
