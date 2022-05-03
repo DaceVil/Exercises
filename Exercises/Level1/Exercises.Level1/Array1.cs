@@ -19,7 +19,15 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+
+        int first = nums[0];
+
+        int lastIndex = nums.Length - 1;
+        int last = nums[lastIndex];
+
+
+
+        return first == 6 || last == 6;
     }
 
     /// <summary>
@@ -32,7 +40,20 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        //1.ja masīva elementu skaits ir mazāks vai vienāds ar 1 , tad atgriež vērtību false
+        //2. ja masīva pirmā un pēdējā vērtība ir vienāda tad true, citādi false
+
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+        int first = nums[0];
+        int lastNumber = nums.Length - 1;
+        int last = nums[lastNumber];
+
+        return first == last;
+
+
     }
 
     /// <summary>
@@ -42,7 +63,8 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+
+        return new int[] { 3, 1, 4 };
     }
 
     /// <summary>
@@ -55,8 +77,40 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int afirst = a[0];
+        int bsecond = b[0];
+
+
+        int afirstLast = a.Length - 1; //pēdējā elementa indekss
+        int afirstLastIndex = a[afirstLast];
+        int bsecondLast = b.Length - 1;
+        int bsecondLastIndex = b[bsecondLast];
+
+
+        return (afirst == bsecond) || (afirstLastIndex == bsecondLastIndex);
+
     }
+
+    //public bool CommonEnd(int[] a, int[] b)
+    //{
+    //    int aFirstElement = a[0];
+    //    int bFirstElement = b[0];
+
+    //    if (aFirstElement == bFirstElement)
+    //    {
+    //        return true;
+    //    }
+
+    //    int aLastIndex = a.Length - 1;
+    //    int bLastIndex = b.Length - 1;
+
+    //    int aLastElement = a[aLastIndex];
+    //    int bLastElement = b[bLastIndex];
+
+    //    return aLastElement == bLastElement;
+    //}
+
+
 
     /// <summary>
     /// Given an array of ints length 3, return the sum of all the elements.
@@ -67,7 +121,16 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+
+        foreach (var num in nums)  //nums - elementi , num  - skaitlis elementā, sum - summa
+        {
+            sum = sum + num;
+        }
+
+
+        return sum;
+
     }
 
     /// <summary>
@@ -80,8 +143,26 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+        int rotating = nums[0];
+        int rotating2 = nums[1];
+        int rotating3 = nums[2];
+
+        int[] newNums = new int[nums.Length]; // cik garš būs jaunais masīvs
+
+        newNums[0] = rotating2;// jaunajā masīvā saliekam vērtības tādā secībā kā nepieciešams
+        newNums[1] = rotating3;//
+        newNums[2] = rotating;//
+
+        return newNums;
     }
+
+    // īsais variants : 
+    //public int[] RotateLeft3(int[] nums)
+    //    {
+    //        return new int[] { nums[1], nums[2], nums[0]
+    //};
+    //    }
+
 
     /// <summary>
     /// Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2,
