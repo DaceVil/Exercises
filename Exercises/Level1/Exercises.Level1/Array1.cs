@@ -174,7 +174,15 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        int revers1 = nums[0];
+        int revers2 = nums[1];
+        int revers3 = nums[2];
+
+        int[] newNums = new int[nums.Length];
+        newNums[0] = revers3;
+        newNums[1] = revers2;
+        newNums[2] = revers1;
+        return (newNums);
     }
 
     /// <summary>
@@ -187,7 +195,22 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        int max1 = nums[0];
+        int max2 = nums[1];
+        int max3 = nums[2];
+
+        int[] maxNum = new int[nums.Length];
+
+
+        maxNum[0] = nums[0];
+        if (nums[2] >= maxNum[0])
+            maxNum[0] = nums[2];
+
+        maxNum[1] = maxNum[0];
+        maxNum[2] = maxNum[0];
+        return maxNum;
+
+      
     }
 
     /// <summary>
@@ -201,7 +224,20 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+
+        int[] element = new int[nums.Length];
+
+        if (nums.Length>=2)
+        {
+            return (nums[0]+ nums[1]);
+        }
+        if (nums.Length == 1)
+        {
+            return (nums[0]);
+        }
+        return 0;
+
+
     }
 
     /// <summary>
