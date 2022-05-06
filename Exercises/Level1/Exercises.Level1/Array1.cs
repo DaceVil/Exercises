@@ -236,8 +236,6 @@ public class Array1
             return (nums[0]);
         }
         return 0;
-
-
     }
 
     /// <summary>
