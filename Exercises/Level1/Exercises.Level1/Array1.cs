@@ -260,7 +260,6 @@ public class Array1
     /// makeEnds([1, 2, 3, 4]) → [1, 4]
     /// makeEnds([7, 4, 6, 2]) → [7, 2]
     /// </summary>
-    /// 
     public int[] MakeEnds(int[] nums)
     {
         throw new NotImplementedException();
