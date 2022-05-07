@@ -249,7 +249,11 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int [] midd = new int[2];
+        midd[0] = a[1];
+        midd[1] = b[1];
+        return midd;
+
     }
 
     /// <summary>
@@ -262,7 +266,12 @@ public class Array1
     /// </summary>
     public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        
+        int [] ends = new int[2];
+        ends[0] = nums[0];
+        
+        ends[1] = nums [nums.Length-1];
+        return ends;
     }
 
     /// <summary>
@@ -274,7 +283,23 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+
+    //    if (nums[0] == 2 || nums[0] == 3)
+    //        return true;
+    //    return (nums[1] == 2 || nums[1] == 3);
+
+
+        /// Vai šo var ar for izpildīt ?
+        
+        for (int i = 0; i<nums.Length; i++)
+        {
+            
+            if ((nums[i] == 2) || nums[i] == 3) ;
+            return true;
+        }
+
+        return false;
+
     }
 
     /// <summary>
@@ -286,7 +311,21 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
-        throw new NotImplementedException();
+        //if (nums[0] == 2 || nums[0] == 3)
+        //    return false;
+        //return !(nums[1] == 2 || nums[1] == 3);
+
+        /// Vai šo var ar for izpildīt ?
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+
+            if ((nums[i] == 2) || nums[i] == 3) ;
+            return false;
+        }
+
+        return true;
+
     }
 
     /// <summary>
