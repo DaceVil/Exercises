@@ -16,8 +16,16 @@ public class Array2
     /// countEvens([1, 3, 5]) → 0
     /// </summary>
     public int CountEvens(int[] nums)
-    {
-        throw new NotImplementedException();
+       {
+
+        int count = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] % 2 == 0)
+                count++;
+        }
+        return count;
+  
     }
 
     /// <summary>
@@ -31,8 +39,21 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
-        throw new NotImplementedException();
+        int max = nums[0];
+        int min = nums[0];
+       
+        for (int i = 0; i < nums.Length; i++)
+        {
+
+            max = Math.Max(max, nums[i]);
+            min = Math.Min(min, nums[i]);
+
+
+        }
+
+       return(max-min);
     }
+
 
     /// <summary>
     /// Return the "centered" average of an array of ints, which we'll say is the mean average of
@@ -47,6 +68,19 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
+       
+        int max = nums[0];
+        int min = nums[0];
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+         
+             
+
+        }
+        return ();
+
+
         throw new NotImplementedException();
     }
 
