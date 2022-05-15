@@ -66,22 +66,31 @@ public class Array2
     /// centeredAverage([1, 1, 5, 5, 10, 8, 7]) → 5
     /// centeredAverage([-10, -4, -2, -4, -2, 0]) → -3
     /// </summary>
-    public int CenteredAverage(int[] nums)
-    {
-       
-        int max = nums[0];
-        int min = nums[0];
-
-        for (int i = 0; i < nums.Length; i++)
+  {
+        int sum = 0;   // sākotnējā vērtība
+        foreach (var item in nums)  //item - skaitlis, nums masīvs
         {
-         
-             
+            sum += item;   //sum+item
+        }
+        int max = int.MaxValue; //nosaka max value
+        int min = int.MinValue;  //nosaka min value
+
+        
+            foreach (var item in nums) 
+            {
+
+            if (max > item)  // ja max value  ir lielāka par item elementu
+            {
+                max = item; // tad max value piešķirta mainīgajam item
+            }
+            if (min < item)  // ja min value  ir mazāka par item elementu
+            {
+                min = item; // tad min value piešķirta mainīgajam item
+            }
+           
 
         }
-        return ();
-
-
-        throw new NotImplementedException();
+        return ((sum -max-min )/ (nums.Length-2));   
     }
 
     /// <summary>
