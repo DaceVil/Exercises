@@ -16,7 +16,7 @@ public class Array2
     /// countEvens([1, 3, 5]) → 0
     /// </summary>
     public int CountEvens(int[] nums)
-       {
+    {
 
         int count = 0;
         for (int i = 0; i < nums.Length; i++)
@@ -25,7 +25,7 @@ public class Array2
                 count++;
         }
         return count;
-  
+
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ public class Array2
     {
         int max = nums[0];
         int min = nums[0];
-       
+
         for (int i = 0; i < nums.Length; i++)
         {
 
@@ -51,7 +51,7 @@ public class Array2
 
         }
 
-       return(max-min);
+        return (max - min);
     }
 
 
@@ -66,7 +66,8 @@ public class Array2
     /// centeredAverage([1, 1, 5, 5, 10, 8, 7]) → 5
     /// centeredAverage([-10, -4, -2, -4, -2, 0]) → -3
     /// </summary>
-  {
+    public int CenteredAverage(int[] nums)
+    {
         int sum = 0;   // sākotnējā vērtība
         foreach (var item in nums)  //item - skaitlis, nums masīvs
         {
@@ -75,9 +76,9 @@ public class Array2
         int max = int.MaxValue; //nosaka max value
         int min = int.MinValue;  //nosaka min value
 
-        
-            foreach (var item in nums) 
-            {
+
+        foreach (var item in nums)
+        {
 
             if (max > item)  // ja max value  ir lielāka par item elementu
             {
@@ -87,10 +88,10 @@ public class Array2
             {
                 min = item; // tad min value piešķirta mainīgajam item
             }
-           
+
 
         }
-        return ((sum -max-min )/ (nums.Length-2));   
+        return ((sum - max - min) / (nums.Length - 2));
     }
 
     /// <summary>
@@ -103,29 +104,23 @@ public class Array2
     /// sum13([1, 2, 2, 1, 13]) → 6
     /// </summary>
     public int Sum13(int[] nums)
-       {
-
+    {
         int sum = 0;
-        int expected = 13;
-
-  
+        int unlucky = 13;
 
         for (int i = 0; i < nums.Length; i++)
         {
-            
-            if (nums[i] == expected)
+
+            if (nums[i] == unlucky )
             {
-                return sum;
-            }
-            if (i>0 && nums[i - 1] == expected)
-            {
-                return sum;
+                 i++; //pālec uz nākošo, i ir nakošais skaitlis, ar darbību liek pārlekt uz nakošo vērtību
+
+                continue;
             }
 
-                     
 
             sum += nums[i];
-          
+
         }
 
         return sum;
