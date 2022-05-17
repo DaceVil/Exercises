@@ -103,8 +103,32 @@ public class Array2
     /// sum13([1, 2, 2, 1, 13]) → 6
     /// </summary>
     public int Sum13(int[] nums)
-    {
-        throw new NotImplementedException();
+       {
+
+        int sum = 0;
+        int expected = 13;
+
+  
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            
+            if (nums[i] == expected)
+            {
+                return sum;
+            }
+            if (i>0 && nums[i - 1] == expected)
+            {
+                return sum;
+            }
+
+                     
+
+            sum += nums[i];
+          
+        }
+
+        return sum;
     }
 
     /// <summary>
